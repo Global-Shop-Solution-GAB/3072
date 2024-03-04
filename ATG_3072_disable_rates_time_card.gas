@@ -1,0 +1,30 @@
+Program.Sub.ScreenSU.Start
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+' Coincidentally, the ID's for the Rate fields are the same for
+' Payroll > Transactions > Time Card Entry and
+' Payroll > Transactions > Time Card Maintenance
+
+'Disable Rate 1 field
+F.Intrinsic.UI.ChangeCallerProperty(V.Passed.000041,"LOCK",1)
+
+'Disable Rate 2 field
+F.Intrinsic.UI.ChangeCallerProperty(V.Passed.000001,"LOCK",1)
+
+'Disable Rate 3 field
+F.Intrinsic.UI.ChangeCallerProperty(V.Passed.000025,"LOCK",1)
+
+Program.Sub.Main.End
+
+Program.Sub.Comments.Start
+${$0$}$ATG_DISABLE_RATES_TIME_CARD$}$LML$}$6/10/2012
+${$1$}$$}$$}$1$}$39610$}$Populate Hook (PRS0011B)$}$6/10/2012 7:03:08 PM$}$
+${$1$}$$}$$}$0$}$39510$}$Populate Hook (PRS001QH)$}$6/10/2012 7:01:47 PM$}$
+${$3$}$0$}$$}$-1$}$-1$}$$}$1/1/1900$}$In manual time card entry per employee (Payroll>Transactions>Time Card Entry), and time card maintenance (Payroll>Transactions>Time Card Maintenance), disable the 3 Rate fields to make them "read-only" to prevent changing.
+Program.Sub.Comments.End
+
